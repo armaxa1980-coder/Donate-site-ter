@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Поддержи меня</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #020617, #0f172a);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    overflow: hidden;
+}
+
+/* АНИМИРОВАННЫЙ ФОН */
+.bg {
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, #22c55e33 0%, transparent 60%);
+    animation: move 10s infinite linear;
+}
+
+@keyframes move {
+    0% { transform: translate(-20%, -20%); }
+    50% { transform: translate(20%, 20%); }
+    100% { transform: translate(-20%, -20%); }
+}
+
+/* КАРТОЧКА */
+.card {
+    position: relative;
+    background: rgba(30,41,59,0.9);
+    padding: 35px;
+    border-radius: 20px;
+    width: 340px;
+    text-align: center;
+    box-shadow: 0 0 50px rgba(34,197,94,0.6);
+    animation: glow 2s infinite alternate;
+    z-index: 2;
+}
+
+@keyframes glow {
+    from { box-shadow: 0 0 20px rgba(34,197,94,0.3); }
+    to   { box-shadow: 0 0 60px rgba(34,197,94,0.8); }
+}
+
+h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+p {
+    opacity: 0.8;
+    margin-bottom: 20px;
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    font-size: 18px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.donate {
+    background: #22c55e;
+    color: black;
+}
+
+.donate:hover {
+    background: #16a34a;
+    transform: scale(1.05);
+}
+
+.telegram {
+    background: #38bdf8;
+    color: black;
+}
+
+.telegram:hover {
+    background: #0ea5e9;
+    transform: scale(1.05);
+}
+
+.footer {
+    margin-top: 15px;
+    font-size: 12px;
+    opacity: 0.6;
+}
+
+/* КНОПКА МУЗЫКИ */
+.music-btn {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    background: #22c55e;
+    color: black;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 5;
+}
+</style>
+</head>
+<body>
+
+<div class="bg"></div>
+
+<div class="card">
+    <h1>Поддержи меня 💚</h1>
+    <p>Твой донат мотивирует меня делать больше контента</p>
+
+    <button class="donate" onclick="donate()">💸 Задонатить</button>
+    <button class="telegram" onclick="tg()">📢 Telegram</button>
+
+    <div class="footer">t.me/ter1zxcl</div>
+</div>
+
+<!-- МУЗЫКА -->
+<audio id="music" loop>
+    <source src="https://cdn.mp3wr.com/?h=JGraYpdVSKhDwqKCukliNIAlhN2bcZHFNnlxb3Hb1JNGaOQUlFRIXB21rIqfLiLxlhNJ3KxqnMxClnF5gSCnkUpn5lOeZEhJGsurhsRJVA\\" type="audio/mpeg">
+</audio>
+
+<button class="music-btn" onclick="playMusic()">🎵 Музыка</button>
+
+<script>
+function donate() {
+    window.location.href = "https://dalink.to/terzxc";
+}
+
+function tg() {
+    window.location.href = "люблю тя:3💕";
+}
+
+function playMusic() {
+    const music = document.getElementById("music");
+    music.play();
+}
+</script>
+
+</body>
+</html>
